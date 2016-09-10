@@ -8,7 +8,7 @@ Original Design and Code by Adam Welch
 Modified and extended features added by Jonathan Wells
 
 
-Features
+##Features
 - Able to discharge 4 18650 batteries simultaneously 
 - Setup menu when battery is inserted to select the target discharge voltage.  
 - Status LEDs for each battery (passively controlled by Mosfet gate signal) 
