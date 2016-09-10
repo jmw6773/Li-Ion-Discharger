@@ -11,12 +11,13 @@
 * Required Library - LCD5110_Graph.h - http://www.rinkydinkelectronics.com/library.php?id=47
 */
 
-//#define HUMAN_DEBUG //should send serial info as human readable or for computer parsing
+//#define HUMAN_DEBUG //uncomment to send serial info as human readable; comment for ease of computer parsing
 #define NUM_BATTERIES 4
 
 /* Display Setup */
 #include "LCD5110_Graph.h"
 #include <PWM.h>
+//connect CS to GND on the LCD
 LCD5110 myGLCD(13, 11, 12, 10, -1);  // Setup Nokia 5110 Screen SCLK/CLK=13, DIN/MOSI/DATA=11, DC/CS=12, RST=10, Chip Select/CE/SCE=12,
 
 extern uint8_t SmallFont[];
@@ -90,7 +91,6 @@ float battVolt[NUM_BATTERIES];
 float mAh[NUM_BATTERIES];
 
 float voltRef = 0.00; // Reference voltage (probe your 5V pin)
-byte numBatteriesFound = 0;
 
 unsigned long previousMillis[NUM_BATTERIES] = {0, 0, 0, 0};
 unsigned long startTime[NUM_BATTERIES];
@@ -275,7 +275,6 @@ void loop()
         mAh[i] = 0.0;
         previousMillis[i] = millis();
         startTime[i] = previousMillis[i];
-        numBatteriesFound++;
   
         if (battLow[i] <= MAXIMUM_BATTERY_VOLTAGE && battLow[i] >= MINIMUM_BATTERY_VOLTAGE)
           curr_status[i] = RUNNING;
@@ -299,9 +298,6 @@ void loop()
         
         if ((int)battVolt[i] == 0) //battery was removed
         {
-          if (curr_status[i] != NO_BATTERY && curr_status[i] != SETUP_BEGIN)//curr_status[i] != FINISHED && 
-            numBatteriesFound--;
-
           //if battery was flagged for setup, remove flag
           if (batterySetup == i)
             batterySetup = NUM_BATTERIES + NUM_BATTERIES;
@@ -382,7 +378,7 @@ void loop()
     buzzerCycle--;
   }
   //if batteries are being discharged, re-calculate the AVcc for the remaining time
-  else if (loopStart > 0 && numBatteriesFound > 0)
+  else if (loopStart > 0)
   {
     loopStart = loopStart / 10; // devide by the number of times to average VCC
     for (int i = 0; i < 10; i++)
@@ -390,11 +386,6 @@ void loop()
       voltRef += vccRead(loopStart);
     }
     voltRef = voltRef / 10000.0;
-  }
-  //if the system isn't active, just sleep
-  else if (numBatteriesFound == 0)
-  {
-    delay(interval);
   }
 #ifdef HUMAN_DEBUG
   Serial.println();
@@ -456,6 +447,8 @@ void printScreen()
     displayMenu(batterySetup);
     return;
   }
+
+  byte numBatteriesFound = 0;
   
   //find any that need setup, display the menu if any are found
   for (int i=0; i < NUM_BATTERIES; i++)
@@ -466,6 +459,11 @@ void printScreen()
        displayMenu(batterySetup);
        return;
      }
+     else if (battVolt[i] > 0 && (curr_status[i] == RUNNING || curr_status[i] == FINISHED))
+     {
+       numBatteriesFound++;
+     }
+     
   }
 
   //if no batteries are inserted, display "No Battery Found" message
