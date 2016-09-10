@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -7404,7 +7404,7 @@ Source: &lt;a href="http://www.jst-mfg.com/product/pdf/eng/eZH.pdf"&gt;http://ww
 <part name="BATT2" library="adafruit" deviceset="1X2" device="-3.5MM"/>
 <part name="BATT3" library="adafruit" deviceset="1X2" device="-3.5MM"/>
 <part name="BATT4" library="adafruit" deviceset="1X2" device="-3.5MM"/>
-<part name="LED_PANEL_PWR" library="adafruit" deviceset="1X2" device="-3.5MM"/>
+<part name="5V_VIN" library="adafruit" deviceset="1X2" device="-3.5MM"/>
 <part name="LED_PANEL" library="SparkFun-Connectors" deviceset="M04" device="LOCK"/>
 <part name="R13" library="SparkFun-Resistors" deviceset="RESISTOR" device="AXIAL-0.3" value="4.7k"/>
 <part name="R14" library="SparkFun-Resistors" deviceset="RESISTOR" device="AXIAL-0.3" value="4.7k"/>
@@ -7441,7 +7441,7 @@ Source: &lt;a href="http://www.jst-mfg.com/product/pdf/eng/eZH.pdf"&gt;http://ww
 <part name="R21" library="SparkFun-Passives" deviceset="RESISTOR" device="1206" value="10k"/>
 <part name="FAN_PIN" library="SparkFun-Connectors" deviceset="M01" device="PTH"/>
 <part name="V_BANK" library="adafruit" deviceset="JST_2PIN" device="-THM"/>
-<part name="V_BANK1" library="adafruit" deviceset="JST_2PIN" device="-THM"/>
+<part name="LCD_PANEL_PWR" library="adafruit" deviceset="JST_2PIN" device="-THM"/>
 </parts>
 <sheets>
 <sheet>
@@ -7469,7 +7469,7 @@ Source: &lt;a href="http://www.jst-mfg.com/product/pdf/eng/eZH.pdf"&gt;http://ww
 <instance part="BATT2" gate="G$1" x="52.07" y="-24.13" rot="MR270"/>
 <instance part="BATT3" gate="G$1" x="109.22" y="-25.4" rot="MR270"/>
 <instance part="BATT4" gate="G$1" x="165.1" y="-25.4" rot="MR270"/>
-<instance part="LED_PANEL_PWR" gate="G$1" x="-60.96" y="152.4" rot="R180"/>
+<instance part="5V_VIN" gate="G$1" x="-60.96" y="152.4" rot="R180"/>
 <instance part="LED_PANEL" gate="G$1" x="-50.8" y="53.34"/>
 <instance part="R13" gate="G$1" x="-5.08" y="88.9" rot="R90"/>
 <instance part="R14" gate="G$1" x="-2.54" y="81.28" rot="R90"/>
@@ -7506,7 +7506,7 @@ Source: &lt;a href="http://www.jst-mfg.com/product/pdf/eng/eZH.pdf"&gt;http://ww
 <instance part="R21" gate="G$1" x="-81.28" y="121.92" rot="R180"/>
 <instance part="FAN_PIN" gate="G$1" x="-57.15" y="72.39"/>
 <instance part="V_BANK" gate="G$1" x="-60.96" y="139.7" rot="R180"/>
-<instance part="V_BANK1" gate="G$1" x="-60.96" y="127" rot="R180"/>
+<instance part="LCD_PANEL_PWR" gate="G$1" x="-60.96" y="127" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -7524,7 +7524,7 @@ Source: &lt;a href="http://www.jst-mfg.com/product/pdf/eng/eZH.pdf"&gt;http://ww
 <wire x1="-38.1" y1="162.56" x2="-17.78" y2="162.56" width="0.1524" layer="91"/>
 <wire x1="-20.32" y1="167.64" x2="-17.78" y2="167.64" width="0.1524" layer="91"/>
 <wire x1="-17.78" y1="167.64" x2="-17.78" y2="162.56" width="0.1524" layer="91"/>
-<pinref part="LED_PANEL_PWR" gate="G$1" pin="1"/>
+<pinref part="5V_VIN" gate="G$1" pin="1"/>
 <wire x1="-55.88" y1="149.86" x2="-50.8" y2="149.86" width="0.1524" layer="91"/>
 <junction x="-50.8" y="149.86"/>
 <pinref part="Q3" gate="G$1" pin="S"/>
@@ -7642,7 +7642,7 @@ Source: &lt;a href="http://www.jst-mfg.com/product/pdf/eng/eZH.pdf"&gt;http://ww
 <pinref part="V_BANK" gate="G$1" pin="2"/>
 <wire x1="-58.42" y1="139.7" x2="-50.8" y2="139.7" width="0.1524" layer="91"/>
 <junction x="-50.8" y="139.7"/>
-<pinref part="V_BANK1" gate="G$1" pin="2"/>
+<pinref part="LCD_PANEL_PWR" gate="G$1" pin="2"/>
 <wire x1="-58.42" y1="127" x2="-50.8" y2="127" width="0.1524" layer="91"/>
 <junction x="-50.8" y="127"/>
 </segment>
@@ -8003,7 +8003,7 @@ Source: &lt;a href="http://www.jst-mfg.com/product/pdf/eng/eZH.pdf"&gt;http://ww
 <wire x1="-33.02" y1="160.02" x2="-40.64" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="-40.64" y1="160.02" x2="-45.72" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="-45.72" y1="160.02" x2="-45.72" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="LED_PANEL_PWR" gate="G$1" pin="2"/>
+<pinref part="5V_VIN" gate="G$1" pin="2"/>
 <wire x1="-55.88" y1="152.4" x2="-45.72" y2="152.4" width="0.1524" layer="91"/>
 <junction x="-45.72" y="152.4"/>
 <wire x1="-45.72" y1="152.4" x2="-45.72" y2="137.16" width="0.1524" layer="91"/>
@@ -8043,7 +8043,7 @@ Source: &lt;a href="http://www.jst-mfg.com/product/pdf/eng/eZH.pdf"&gt;http://ww
 <pinref part="V_BANK" gate="G$1" pin="1"/>
 <wire x1="-58.42" y1="137.16" x2="-45.72" y2="137.16" width="0.1524" layer="91"/>
 <junction x="-45.72" y="137.16"/>
-<pinref part="V_BANK1" gate="G$1" pin="1"/>
+<pinref part="LCD_PANEL_PWR" gate="G$1" pin="1"/>
 <wire x1="-58.42" y1="124.46" x2="-45.72" y2="124.46" width="0.1524" layer="91"/>
 <junction x="-45.72" y="124.46"/>
 </segment>

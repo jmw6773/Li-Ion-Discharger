@@ -923,7 +923,7 @@ design rules under a new name.</description>
 <element name="C4" library="SparkFun-Passives" package="CAP-PTH-5MM" value="" x="22.912" y="25.232" rot="R180"/>
 <element name="C5" library="SparkFun-Passives" package="AXIAL-5MM" value="" x="48.362" y="49.214" rot="R90"/>
 <element name="IC1" library="atmega328" package="DIL28-3" value="ATMEGA328-20P" x="24.054" y="41.326" rot="R180"/>
-<element name="LED_PANEL_PWR" library="adafruit" package="1X2-3.5MM" value="1X2-3.5MM" x="17.74" y="65.81" rot="R180"/>
+<element name="5V_VIN" library="adafruit" package="1X2-3.5MM" value="1X2-3.5MM" x="17.74" y="65.81" rot="R180"/>
 <element name="LED_PANEL" library="SparkFun-Connectors" package="1X04_LOCK" value="" x="10.38" y="51.928" rot="R180"/>
 <element name="JP6" library="SparkFun-Connectors" package="1X02_LOCK" value="" x="28.514" y="20.924" rot="R270"/>
 <element name="L1" library="SparkFun-Passives" package="RLB0912" value="10uH" x="20.27" y="31.006"/>
@@ -969,12 +969,12 @@ design rules under a new name.</description>
 <element name="R21" library="SparkFun-Passives" package="1206" value="10k" x="18.16" y="12.01" rot="MR180"/>
 <element name="FAN_PIN" library="SparkFun-Connectors" package="1X01" value="" x="4.46" y="35.39"/>
 <element name="V_BANK" library="adafruit" package="JST-PH-2-THM" value="" x="19.12" y="20.41" rot="R90"/>
-<element name="V_BANK1" library="adafruit" package="JST-PH-2-THM" value="" x="33.74" y="68.52" rot="R90"/>
+<element name="LCD_PANEL_PWR" library="adafruit" package="JST-PH-2-THM" value="" x="33.74" y="68.52" rot="R90"/>
 </elements>
 <signals>
 <signal name="GND">
 <contactref element="C3" pad="2"/>
-<contactref element="LED_PANEL_PWR" pad="1"/>
+<contactref element="5V_VIN" pad="1"/>
 <contactref element="Q3" pad="3"/>
 <contactref element="Q2" pad="3"/>
 <contactref element="Q1" pad="3"/>
@@ -1208,7 +1208,7 @@ design rules under a new name.</description>
 <wire x1="1.55" y1="21.98" x2="1.55" y2="37.64" width="1.016" layer="16"/>
 <wire x1="19.12" y1="21.41" x2="19.12" y2="21.98" width="1.016" layer="16"/>
 <wire x1="19.12" y1="21.98" x2="1.55" y2="21.98" width="1.016" layer="16"/>
-<contactref element="V_BANK1" pad="1"/>
+<contactref element="LCD_PANEL_PWR" pad="1"/>
 <wire x1="33.74" y1="69.52" x2="33.398" y2="69.862" width="1.016" layer="16"/>
 <wire x1="33.398" y1="69.862" x2="27.276" y2="69.862" width="1.016" layer="16"/>
 </signal>
@@ -1521,7 +1521,7 @@ design rules under a new name.</description>
 <signal name="VCC">
 <contactref element="IC1" pad="7"/>
 <contactref element="C3" pad="1"/>
-<contactref element="LED_PANEL_PWR" pad="2"/>
+<contactref element="5V_VIN" pad="2"/>
 <contactref element="L1" pad="1"/>
 <contactref element="R16" pad="P$1"/>
 <contactref element="JP1" pad="6"/>
@@ -1573,7 +1573,7 @@ design rules under a new name.</description>
 <wire x1="22.7719" y1="22.36" x2="22.4122" y2="22.36" width="1.016" layer="16"/>
 <wire x1="22.4222" y1="18.49" x2="22.4222" y2="22.36" width="1.016" layer="16"/>
 <wire x1="22.4222" y1="22.36" x2="22.4122" y2="22.36" width="1.016" layer="16"/>
-<contactref element="V_BANK1" pad="2"/>
+<contactref element="LCD_PANEL_PWR" pad="2"/>
 <polygon width="0.254" layer="16" thermals="no">
 <vertex x="21.83" y="18.2"/>
 <vertex x="21.83" y="18.07"/>
